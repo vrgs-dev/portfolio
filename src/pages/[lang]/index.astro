@@ -1,31 +1,30 @@
 ---
-import { getCollection } from 'astro:content';
-import Container from '@/components/Container.astro';
-import Layout from '@/layouts/Layout.astro';
-import Link from '@/components/Link.astro';
-import { dateRange } from '@/lib/utils';
-import { SITE, SOCIALS } from '@/consts';
-import { stripLangFromSlug, useTranslations } from '@/i18n/utils';
-import { collections } from '@/content/config';
+import { getCollection } from "astro:content";
+import Container from "@/components/Container.astro";
+import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
+import { dateRange } from "@/lib/utils";
+import { SITE, SOCIALS } from "@/consts";
+import { stripLangFromSlug, useTranslations } from "@/i18n/utils";
 
 export async function getStaticPaths() {
-  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+  return [{ params: { lang: "es" } }, { params: { lang: "en" } }];
 }
 
-const { lang } = Astro.params as { lang: 'en' | 'es' };
+const { lang } = Astro.params as { lang: "en" | "es" };
 const t = useTranslations(lang);
 
-const blog = (await getCollection('blog'))
+const blog = (await getCollection("blog"))
   .filter((post) => !post.data.draft && post.data.lang === lang)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
-const projects = (await getCollection('projects'))
+const projects = (await getCollection("projects"))
   .filter((project) => !project.data.draft && project.data.lang === lang)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
 
-const allwork = (await getCollection('work'))
+const allwork = (await getCollection("work"))
   .filter((work) => work.data.lang === lang)
   .sort(
     (a, b) =>
@@ -39,30 +38,30 @@ const work = allwork;
 const entryHref = (entry: {
   slug: string;
   collection: string;
-  data: { lang: 'en' | 'es' };
+  data: { lang: "en" | "es" };
 }) => {
-  if (entry.collection !== 'work') {
+  if (entry.collection !== "work") {
     return `/${entry.data.lang}/${entry.collection}/${stripLangFromSlug(entry.slug, entry.data.lang)}`;
   }
   return `/${entry.data.lang}/${entry.collection}`;
 };
 ---
 
-<Layout title="Home" description={t('blog.description')}>
+<Layout title="Home" description={t("blog.description")}>
   <Container>
     <h4 class="font-semibold text-black dark:text-white animate">
-      {t('home.greeting')}
+      {t("home.greeting")}
       <span class="text-xl">👋🏻</span>
     </h4>
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
           <p class="animate">
-            {t('home.description.p1')}
-            {t('home.description.p2')}
+            {t("home.description.p1")}
+            {t("home.description.p2")}
           </p>
           <p class="animate">
-            {t('home.description.p3')}
+            {t("home.description.p3")}
           </p>
         </article>
       </section>
@@ -70,14 +69,14 @@ const entryHref = (entry: {
       <section class="space-y-6 animate">
         <div class="flex flex-wrap justify-between items-center gap-y-2">
           <h5 class="font-semibold text-black dark:text-white">
-            {t('home.latestPosts')}
+            {t("home.latestPosts")}
           </h5>
-          <Link href={`/${lang}/blog`}> {t('home.seeAllPosts')} </Link>
+          <Link href={`/${lang}/blog`}> {t("home.seeAllPosts")} </Link>
         </div>
         {
           blog.length === 0 ? (
             <div class="text-muted-foreground text-sm animate">
-              {t('empty.blog')}
+              {t("empty.blog")}
             </div>
           ) : (
             <ul class="flex flex-col gap-3">
@@ -105,14 +104,14 @@ const entryHref = (entry: {
       <section class="space-y-6 animate">
         <div class="flex flex-wrap justify-between items-center gap-y-2">
           <h5 class="font-semibold text-black dark:text-white">
-            {t('home.workExperience')}
+            {t("home.workExperience")}
           </h5>
-          <Link href={`/${lang}/work`}> {t('home.seeAllWork')} </Link>
+          <Link href={`/${lang}/work`}> {t("home.seeAllWork")} </Link>
         </div>
         {
           work.length === 0 ? (
             <div class="text-muted-foreground text-sm animate">
-              {t('empty.work')}
+              {t("empty.work")}
             </div>
           ) : (
             <ul class="flex flex-col gap-3">
@@ -141,14 +140,14 @@ const entryHref = (entry: {
       <section class="space-y-6 animate">
         <div class="flex flex-wrap justify-between items-center gap-y-2">
           <h5 class="font-semibold text-black dark:text-white">
-            {t('home.recentProjects')}
+            {t("home.recentProjects")}
           </h5>
-          <Link href={`/${lang}/projects`}> {t('home.seeAllProjects')} </Link>
+          <Link href={`/${lang}/projects`}> {t("home.seeAllProjects")} </Link>
         </div>
         {
           projects.length === 0 ? (
             <div class="text-muted-foreground text-sm animate">
-              {t('empty.projects')}
+              {t("empty.projects")}
             </div>
           ) : (
             <ul class="flex flex-col gap-3">
@@ -175,11 +174,11 @@ const entryHref = (entry: {
 
       <section class="space-y-4 animate">
         <h5 class="font-semibold text-black dark:text-white">
-          {t('home.letsConnect')}
+          {t("home.letsConnect")}
         </h5>
         <article>
           <p>
-            {t('home.connectMessage')}
+            {t("home.connectMessage")}
           </p>
         </article>
         <ul class="flex flex-wrap gap-3">
