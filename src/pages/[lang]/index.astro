@@ -81,16 +81,17 @@ const entryHref = (entry: {
             </div>
           ) : (
             <ul class="flex flex-col gap-3">
-              {blog.map((post) => (
+              {blog.map((entry) => (
                 <li class="animate">
-                  <a
-                    href={entryHref(post)}
-                    class="hover:bg-black/5 dark:hover:bg-white/5 px-4 py-3 border border-black/15 dark:border-white/20 rounded-lg hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
-                  >
-                    <div class="flex flex-col gap-0.5">
-                      <div class="font-semibold">{post.data.title}</div>
-                      <div class="opacity-75 text-sm">
-                        {post.data.description}
+                  <a href={entryHref(entry)}>
+                    <div class="hover:bg-black/5 dark:hover:bg-white/5 px-4 py-3 border border-black/15 dark:border-white/20 rounded-lg transition-colors duration-300 ease-in-out">
+                      <div class="flex flex-wrap justify-between items-baseline gap-x-6 gap-y-1">
+                        <div class="font-semibold text-black dark:text-white">
+                          {entry.data.title}
+                          <span class="opacity-75 text-sm">
+                            {entry.data.description}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </a>
