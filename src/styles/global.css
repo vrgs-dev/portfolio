@@ -1,23 +1,75 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+/* Custom Properties - Terminal Elegance Theme */
+:root {
+  --accent: #10b981;
+  --accent-light: #34d399;
+  --accent-muted: #10b98120;
+  --surface: #fafaf9;
+  --surface-elevated: #ffffff;
+  --text-primary: #1c1917;
+  --text-secondary: #78716c;
+  --border: #e7e5e4;
+  --border-hover: #d6d3d1;
+}
+
+.dark {
+  --accent: #10b981;
+  --accent-light: #6ee7b7;
+  --accent-muted: #10b98115;
+  --surface: #0c0a09;
+  --surface-elevated: #1c1917;
+  --text-primary: #fafaf9;
+  --text-secondary: #a8a29e;
+  --border: #292524;
+  --border-hover: #44403c;
+}
+
 html {
   overflow-y: scroll;
   color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased;
+  background: var(--surface);
+  color: var(--text-secondary);
+}
+
+/* Subtle grid background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Selection style */
+::selection {
+  background: var(--accent);
+  color: var(--surface);
 }
 
 header {
-  @apply fixed top-0 left-0 right-0 z-50 py-5;
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
-  @apply backdrop-blur-sm saturate-200;
+  @apply fixed top-0 left-0 right-0 z-50 py-4;
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid var(--border);
 }
 
 main {
-  @apply flex-1 py-32;
+  @apply flex-1 py-28 md:py-32;
 }
 
 footer {
-  @apply py-5 text-sm;
+  @apply py-6 text-sm;
 }
 
 article {
@@ -28,16 +80,21 @@ article {
 
 @layer utilities {
   article a {
-    @apply font-sans text-current;
-    @apply transition-colors duration-300 ease-in-out;
+    @apply font-sans;
+    color: var(--accent);
+    text-decoration-color: var(--accent-muted);
+    text-underline-offset: 3px;
+    @apply transition-all duration-300 ease-in-out;
   }
   article a:hover {
-    @apply text-black dark:text-white;
+    color: var(--accent-light);
+    text-decoration-color: var(--accent);
   }
 }
 
+/* Animations */
 .animate {
-  @apply opacity-0 translate-y-3;
+  @apply opacity-0 translate-y-4;
   @apply transition-all duration-700 ease-out;
 }
 
@@ -45,14 +102,157 @@ article {
   @apply opacity-100 translate-y-0;
 }
 
+/* Staggered animation delays */
+.animate-delay-1 {
+  transition-delay: 100ms;
+}
+.animate-delay-2 {
+  transition-delay: 200ms;
+}
+.animate-delay-3 {
+  transition-delay: 300ms;
+}
+.animate-delay-4 {
+  transition-delay: 400ms;
+}
+.animate-delay-5 {
+  transition-delay: 500ms;
+}
+
 html #back-to-top {
   @apply opacity-0 pointer-events-none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
 }
 
 html.scrolled #back-to-top {
   @apply opacity-100 pointer-events-auto;
+  transform: translateY(0);
 }
 
 button {
   cursor: pointer;
+}
+
+/* Card hover effects */
+.card-interactive {
+  position: relative;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  @apply rounded-xl transition-all duration-300 ease-out;
+}
+
+.card-interactive::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  @apply rounded-xl;
+  background: linear-gradient(135deg, var(--accent-muted), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-interactive:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px -10px var(--accent-muted);
+}
+
+.card-interactive:hover::before {
+  opacity: 1;
+}
+
+/* Section titles with accent */
+.section-title {
+  color: var(--text-primary);
+  @apply font-semibold text-lg;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-title::before {
+  content: '';
+  width: 3px;
+  height: 1.25em;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Link with arrow animation */
+.link-arrow {
+  color: var(--accent);
+  @apply text-sm font-medium flex items-center gap-1;
+  transition: all 0.3s ease;
+}
+
+.link-arrow svg {
+  transition: transform 0.3s ease;
+}
+
+.link-arrow:hover {
+  color: var(--accent-light);
+  gap: 0.5rem;
+}
+
+.link-arrow:hover svg {
+  transform: translateX(3px);
+}
+
+/* Status indicator */
+.status-badge {
+  @apply inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full;
+  background: var(--accent-muted);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.status-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+/* Terminal-style code accent */
+.terminal-text {
+  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  color: var(--accent);
+}
+
+/* Gradient text for special emphasis */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Social link pills */
+.social-pill {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.social-pill:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-muted);
 }

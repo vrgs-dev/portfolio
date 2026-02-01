@@ -11,46 +11,46 @@ export const ui = {
     'nav.work': 'Work',
     'nav.projects': 'Projects',
 
-    'home.greeting': "Hi, I'm Camilo",
+    'home.greeting': "Hey, I'm Camilo",
     'home.description.p1':
-      'I am a backend developer focused on building scalable, maintainable and efficient systems.',
+      'Most of what I build, you\'ll never see. But you\'ll notice if it breaks.',
     'home.description.p2':
-      'I work mainly with JavaScript/TypeScript, Python, Golang and modern backend tooling, designing APIs, services and data-driven applications.',
+      'I care about writing code that\'s easy to understand and maintain. Not because it\'s trendy, but because I\'ve been the one reading confusing code at midnight.',
     'home.description.p3':
-      'I enjoy building side projects, exploring system design, performance optimization and developer experience. I value clean architecture, good documentation and pragmatic solutions over unnecessary complexity.',
+      'Outside of work, I like building small tools, learning how systems work under the hood, and occasionally writing about what I figure out along the way.',
 
-    'home.latestPosts': 'Latest posts',
-    'home.seeAllPosts': 'See all posts',
+    'home.latestPosts': 'Writing',
+    'home.seeAllPosts': 'Read all',
 
-    'home.workExperience': 'Work Experience',
-    'home.seeAllWork': 'See all experience',
+    'home.workExperience': `Where I've worked`,
+    'home.seeAllWork': 'Full history',
 
-    'home.recentProjects': 'Recent projects',
-    'home.seeAllProjects': 'See all projects',
+    'home.recentProjects': `Things I've built`,
+    'home.seeAllProjects': 'See all',
 
-    'home.letsConnect': "Let's Connect",
+    'home.letsConnect': 'Say hi',
     'home.connectMessage':
-      'If you want to talk about backend development, systems, side projects or just say hi, feel free to reach out or send me an email.',
+      'If you want to chat about backend stuff, share ideas, or just say hello feel free to reach out. I usually reply.',
 
     'blog.title': 'Blog',
     'blog.description':
-      'Notes, ideas and learnings about backend development, system design and building software.',
+      'Things I learn, problems I solve, and thoughts I want to remember.',
 
     'work.title': 'Experience',
     'work.description':
-      'Places I have worked, problems I have solved and systems I have helped build.',
+      'Places I\'ve worked and what I did there.',
 
     'projects.title': 'Projects',
     'projects.description':
-      'A selection of personal and professional projects focused on backend systems and developer tools.',
+      'Personal projects and small experiments.',
 
     'common.backToTop': 'Back to top',
     'common.URL': 'Website',
     'common.repo': 'Repository',
 
-    'empty.blog': 'No posts yet.',
-    'empty.projects': 'No projects yet.',
-    'empty.work': 'No experience added yet.',
+    'empty.blog': 'No posts yet. Working on it.',
+    'empty.projects': 'Projects coming soon.',
+    'empty.work': 'Work history coming soon.',
   },
 
   es: {
@@ -60,43 +60,43 @@ export const ui = {
 
     'home.greeting': 'Hola, soy Camilo',
     'home.description.p1':
-      'Soy desarrollador backend enfocado en construir sistemas escalables, mantenibles y eficientes.',
+      'La mayoría de lo que construyo nunca lo vas a ver. Pero lo vas a notar si se rompe.',
     'home.description.p2':
-      'Trabajo principalmente con JavaScript/TypeScript, Python, Golang y modernas herramientas de backend, diseñando APIs, servicios y aplicaciones orientadas a datos.',
+      'Me importa escribir código que sea fácil de entender y mantener. No porque esté de moda, sino porque he sido el que lee código confuso a medianoche.',
     'home.description.p3':
-      'Me gusta crear side projects, explorar diseño de sistemas, optimización de rendimiento y experiencia de desarrollo. Priorizo arquitecturas limpias, buena documentación y soluciones pragmáticas.',
+      'Fuera del trabajo, me gusta construir herramientas pequeñas, entender cómo funcionan los sistemas por dentro, y de vez en cuando escribir sobre lo que voy aprendiendo.',
 
-    'home.latestPosts': 'Últimas publicaciones',
-    'home.seeAllPosts': 'Ver todas las publicaciones',
+    'home.latestPosts': 'Escritos',
+    'home.seeAllPosts': 'Leer todo',
 
-    'home.workExperience': 'Experiencia laboral',
-    'home.seeAllWork': 'Ver toda la experiencia',
+    'home.workExperience': 'Dónde he trabajado',
+    'home.seeAllWork': 'Historial completo',
 
-    'home.recentProjects': 'Proyectos recientes',
-    'home.seeAllProjects': 'Ver todos los proyectos',
+    'home.recentProjects': 'Lo que he construido',
+    'home.seeAllProjects': 'Ver todo',
 
-    'home.letsConnect': 'Conectemos',
+    'home.letsConnect': 'Escríbeme',
     'home.connectMessage':
-      'Si quieres hablar sobre backend, sistemas, side projects o simplemente saludar, escríbeme o envíame un correo.',
+      'Si quieres hablar sobre backend, compartir ideas, o simplemente saludar escríbeme. Suelo responder.',
 
     'blog.title': 'Blog',
     'blog.description':
-      'Ideas, aprendizajes y notas sobre desarrollo backend, diseño de sistemas y software.',
+      'Cosas que aprendo, problemas que resuelvo, y pensamientos que quiero recordar.',
 
     'work.title': 'Experiencia',
     'work.description':
-      'Dónde he trabajado, qué problemas he resuelto y qué sistemas he ayudado a construir.',
+      'Lugares donde he trabajado y qué hice ahí.',
 
     'projects.title': 'Proyectos',
     'projects.description':
-      'Una selección de proyectos personales y profesionales enfocados en backend y herramientas para desarrolladores.',
+      'Proyectos personales y pequeños experimentos.',
 
     'common.backToTop': 'Volver arriba',
     'common.URL': 'Web',
     'common.repo': 'Repositorio',
 
-    'empty.blog': 'Aún no hay publicaciones.',
-    'empty.projects': 'Aún no hay proyectos.',
-    'empty.work': 'Aún no hay experiencia registrada.',
+    'empty.blog': 'Aún no hay posts. Trabajando en ello.',
+    'empty.projects': 'Proyectos próximamente.',
+    'empty.work': 'Historial próximamente.',
   },
 } as const;

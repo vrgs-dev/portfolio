@@ -29,29 +29,37 @@ const switchLangHref = (targetLang: Lang) => {
 <footer class="animate">
   <Container>
     <div class="relative">
-      <div class="-top-20 right-0 absolute">
+      <div class="-top-16 right-0 absolute">
         <BackToTop label={t('common.backToTop')} />
       </div>
     </div>
 
-    <div class="flex justify-between items-center">
-      <div class="flex items-center gap-1">
-        &copy; {currentYear} | <a
+    <div class="flex flex-wrap justify-between items-center gap-4">
+      <div class="flex items-center gap-2 text-(--text-secondary)">
+        <span class="text-(--accent)">&copy;</span>
+        {currentYear}
+        <span class="text-(--border)">·</span>
+        <a
           href="https://x.com/vrgs_0"
           target="_blank"
-          rel="noopener noreferrer">{SITE.NAME}</a
+          rel="noopener noreferrer"
+          class="hover:text-(--accent) transition-colors"
         >
+          {SITE.NAME}
+        </a>
       </div>
 
-      <div class="flex items-center gap-1 bg-muted p-0.5 rounded-full text-xs">
+      <div
+        class="flex items-center gap-1 p-1 rounded-lg bg-(--surface-elevated) border border-(--border)"
+      >
         <a
           href={switchLangHref('en')}
           data-lang="en"
           class:list={[
-            'px-2 py-0.5 rounded-full transition-all no-underline',
+            'px-3 py-1.5 rounded-md text-xs font-medium transition-all no-underline',
             lang === 'en'
-              ? 'bg-background text-foreground font-medium shadow-sm'
-              : 'text-muted-foreground hover:text-foreground',
+              ? 'bg-(--accent) text-white'
+              : 'text-(--text-secondary) hover:text-(--text-primary) hover:bg-(--accent-muted)',
           ]}
         >
           EN
@@ -61,10 +69,10 @@ const switchLangHref = (targetLang: Lang) => {
           href={switchLangHref('es')}
           data-lang="es"
           class:list={[
-            'px-2 py-0.5 rounded-full transition-all no-underline',
+            'px-3 py-1.5 rounded-md text-xs font-medium transition-all no-underline',
             lang === 'es'
-              ? 'bg-background text-foreground font-medium shadow-sm'
-              : 'text-muted-foreground hover:text-foreground',
+              ? 'bg-(--accent) text-white'
+              : 'text-(--text-secondary) hover:text-(--text-primary) hover:bg-(--accent-muted)',
           ]}
         >
           ES

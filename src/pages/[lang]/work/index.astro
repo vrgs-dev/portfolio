@@ -30,33 +30,45 @@ const work = await Promise.all(
 <Layout title={t('work.title')} description={t('work.description')}>
   <Container>
     <div class="space-y-10">
-      <div class="font-semibold text-black dark:text-white animate">
-        {t('work.title')}
-      </div>
       {
         work.length === 0 ? (
-          <div class="text-muted-foreground text-sm animate">
+          <div class="p-8 border border-(--border) border-dashed rounded-xl text-(--text-secondary) text-sm text-center animate">
             {t('empty.work')}
           </div>
         ) : (
-          <ul class="flex flex-col gap-6">
-            {work.map((entry) => (
-              <li class="animate">
-                <div class="group hover:bg-black/5 dark:hover:bg-white/5 px-4 py-4 border border-black/15 dark:border-white/20 rounded-lg transition-colors duration-300 ease-in-out">
-                  <div class="flex flex-wrap justify-between items-baseline gap-x-6 gap-y-2">
-                    <div class="space-y-0.5">
-                      <div class="font-semibold text-black dark:text-white">
-                        {entry.data.company}
+          <ul class="relative">
+            {/* Timeline line */}
+            <div
+              class="top-2 bottom-2 left-[11px] absolute bg-(--border) w-px"
+              aria-hidden="true"
+            />
+
+            {work.map((entry, index) => (
+              <li class="relative pb-10 last:pb-0 pl-10 animate">
+                {/* Timeline dot */}
+                <div class="top-1.5 left-0 absolute flex justify-center items-center bg-(--surface-elevated) border-(--accent) border-2 rounded-full w-6 h-6">
+                  <div class="bg-(--accent) rounded-full w-2 h-2" />
+                </div>
+
+                <div class="p-5 card-interactive">
+                  <div class="z-10 relative">
+                    <div class="flex flex-wrap justify-between items-start gap-x-4 gap-y-2 mb-3">
+                      <div>
+                        <h3 class="font-semibold text-(--text-primary) text-lg">
+                          {entry.data.company}
+                        </h3>
+                        <p class="text-(--text-secondary) text-sm">
+                          {entry.data.role}
+                        </p>
                       </div>
-                      <div class="opacity-75 text-sm">{entry.data.role}</div>
+                      <span class="px-2 py-1 rounded font-mono text-(--accent) text-xs whitespace-nowrap bg-(--accent-muted)">
+                        {dateRange(entry.data.dateStart, entry.data.dateEnd)}
+                      </span>
                     </div>
-                    <div class="opacity-75 text-sm">
-                      {dateRange(entry.data.dateStart, entry.data.dateEnd)}
-                    </div>
+                    <article class="text-sm">
+                      <entry.Content />
+                    </article>
                   </div>
-                  <article class="mt-4">
-                    <entry.Content />
-                  </article>
                 </div>
               </li>
             ))}
