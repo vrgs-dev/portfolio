@@ -7,11 +7,11 @@ lang: 'en'
 translationKey: 'start-apps-fullstack'
 ---
 
-End-to-end delivery for multiple client products, with a strong backend focus on scalable architecture, RESTful APIs, and database performance.
+Current role as a senior full-stack developer at a software factory, making architecture decisions and leading technical delivery for multiple client products in parallel.
 
-Backend focus and outcomes
+Focus and outcomes
 
-- Designed service-oriented backends (Node.js) with clear boundaries and reusable modules, making features easier to ship and maintain.
-- Built REST APIs with consistent contracts, validation, and error standards to support multiple frontends and integrations.
-- Optimized SQL-heavy endpoints (indexes, pagination, batching) and introduced caching patterns to reduce response times by ~30–40% in critical flows.
-- Implemented concurrency-safe processing for background jobs and integrations (idempotency + retries), improving reliability in automation pipelines.
+- Defined per-project backend architecture (modular monolith vs. microservices) based on expected volume, budget, and team size, prioritizing incremental delivery.
+- Full-stack development with complete ownership: from domain modeling and APIs to React/Next.js interfaces, ensuring coherence across layers.
+- Implemented multi-layer caching strategies (in-memory, Redis, HTTP) and critical query optimization, keeping response times stable as each product's user base grows.
+- Technical coordination with product and design teams, translating business requirements into actionable engineering tasks with clear estimates and trade-offs.

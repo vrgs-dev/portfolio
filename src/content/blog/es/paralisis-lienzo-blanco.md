@@ -1,6 +1,6 @@
 ---
 title: 'Contra la parálisis del lienzo en blanco'
-description: 'Una herramienta para cuando tienes la intuición, pero te falta la estructura.'
+description: 'Una skill para Claude Code que convierte ideas vagas en productos definidos. Discovery, Definition, Delivery.'
 date: 2026-01-29
 lang: es
 translationKey: pm-skill-thinking-product
@@ -25,7 +25,7 @@ Cuando las ideas solo viven en tu cabeza, son perfectas. Cuando intentas bajarla
 
 ---
 
-## El vacío legal entre la idea y el ticket
+## El vacío entre la idea y el ticket
 
 Tenemos herramientas de sobra para cuando el camino está trazado.
 Si tienes un backlog, tienes Jira. Si tienes un plan, tienes Notion.
@@ -34,7 +34,7 @@ Pero, **¿qué tienes cuando solo tienes dudas?**
 
 Esa etapa temprana es frágil. No hay frameworks que te salven del caos inicial, y ahí es precisamente donde la mayoría de nosotros nos rendimos o, peor aún, construimos algo que nadie necesita.
 
-**PM-SKILL nace para llenar ese vacío.**
+**PM-SKILL nace para llenar ese vacío.** Es una skill diseñada para [Claude Code](https://docs.anthropic.com/en/docs/claude-code), la CLI de Anthropic, que transforma a Claude en un sparring partner de producto.
 
 ---
 
@@ -44,7 +44,7 @@ PM-SKILL no empezó en un tablero de diseño. Empezó con una frustración: los 
 
 Me pregunté: _¿Y si la IA pudiera ser el sparring que te obliga a pensar?_
 
-No quiero un bot que escriba un PRD genérico. Quiero una capacidad técnica una **skill** que:
+No quiero un bot que escriba un PRD genérico. Quiero una capacidad técnica, una **skill** que se integre directamente en mi terminal, que:
 
 1. **Filtre el ruido:** Que me ayude a separar la funcionalidad "cool" de la necesaria.
 2. **Cuestione la premisa:** Que me pregunte quién sentiría el dolor si este proyecto no existiera.
@@ -52,13 +52,55 @@ No quiero un bot que escriba un PRD genérico. Quiero una capacidad técnica una
 
 ---
 
+## Cómo funciona: tres fases, un comando
+
+PM-SKILL sigue una metodología de tres fases secuenciales. Se activa con un solo comando dentro de Claude Code:
+
+```bash
+/pm-skill
+```
+
+La skill detecta automáticamente en qué fase te encuentras y ejecuta la que corresponde:
+
+### 1. Discovery: entender antes de proponer
+
+Claude te hace preguntas directas para extraer lo que realmente tienes en la cabeza. No asume, no propone soluciones prematuras. Solo busca claridad sobre usuarios, objetivos y restricciones.
+
+### 2. Definition: sintetizar en un brief de una página
+
+Con la información del Discovery, la skill genera un brief concreto con el MVP definido usando priorización MoSCoW (Must / Should / Could / Won't). Aquí se traza la línea entre lo necesario y lo deseable.
+
+### 3. Delivery: de features a historias de usuario
+
+Las funcionalidades aprobadas se convierten en historias de usuario con criterios de aceptación y se agrupan en releases desplegables, cada una con un punto de validación claro.
+
+Cuatro reglas no negociables guían todo el proceso: **preguntar antes de proponer**, **clarificar antes de decidir**, **documentar antes de implementar** y **validar antes de avanzar**.
+
+---
+
+## Instalación en Claude Code
+
+PM-SKILL se instala como una skill global en Claude Code. Un script y listo:
+
+```bash
+git clone https://github.com/vrgs-dev/pm-skill.git
+cd pm-skill
+bash install.sh
+```
+
+El instalador copia la skill a `~/.claude/skills/pm-skill/` y, opcionalmente, registra el comando `/pm-skill`. También es compatible con Cursor.
+
+Una vez instalado, abres Claude Code en cualquier proyecto y escribes `/pm-skill`. La skill detecta el contexto y arranca la fase correspondiente.
+
+---
+
 ## Un copiloto para el "Día 0"
 
 Me gusta ver a PM-SKILL como ese colega senior que no te da las respuestas, sino que te hace las preguntas que estabas evitando.
 
-No está aquí para sustituir al Product Manager. Está aquí para **desbloquearlo**. Especialmente en esos flujos de trabajo donde no hay tareas asignadas ni roadmaps definidos. Solo tú, un agente de IA y una idea por pulir.
+No está aquí para sustituir al Product Manager. Está aquí para **desbloquearlo**. Especialmente en esos flujos de trabajo donde no hay tareas asignadas ni roadmaps definidos. Solo tú, Claude Code y una idea por pulir.
 
-Por eso es una **skill** y no una plataforma cerrada. Está diseñada para vivir donde tú trabajas (agentes, terminales, asistentes personalizados), aportando una capa de "criterio de producto" allí donde antes solo había prompts vacíos.
+Por eso es una **skill** y no una plataforma cerrada. Vive donde tú trabajas: en tu terminal, dentro de Claude Code, aportando una capa de criterio de producto allí donde antes solo había prompts vacíos.
 
 ---
 

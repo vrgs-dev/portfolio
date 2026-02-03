@@ -7,11 +7,11 @@ lang: 'es'
 translationKey: 'la-electronic-backend-fulltime'
 ---
 
-Primer rol full-time como desarrollador backend, construyendo servicios y APIs REST en producción con foco en mantenibilidad, integridad de datos y rendimiento.
+Primer rol backend a tiempo completo. Asumí la responsabilidad de construir desde cero los servicios internos de la empresa, definiendo los estándares de código, contratos de API y modelado de datos que se mantienen en uso hasta hoy.
 
 Contribuciones principales
 
-- Implementación de APIs REST con Node.js para flujos internos y de clientes, estandarizando contratos, validaciones y manejo de errores.
-- Modelado de datos relacionales y optimización de consultas SQL (índices + análisis de planes), reduciendo consultas lentas ~35% y mejorando tiempos de respuesta.
-- Implementación de autenticación y control de acceso (permisos por rol) para proteger operaciones sensibles y reducir incidencias de soporte.
-- Mejora de confiabilidad bajo concurrencia aplicando idempotencia y reintentos seguros en integraciones con servicios externos.
+- Diseño del esquema relacional para inventario, clientes y facturación, incluyendo migraciones versionadas y constraints que eliminaron inconsistencias de datos recurrentes.
+- Construcción del sistema de autenticación y autorización con JWT y permisos por rol, reduciendo incidencias de acceso indebido a cero en operaciones sensibles.
+- Estandarización de contratos REST (validación de entrada, códigos de error, paginación) que se adoptaron como base para todos los servicios posteriores.
+- Integración con pasarelas de pago y servicios de terceros, implementando circuit breakers y reintentos controlados para garantizar consistencia transaccional.

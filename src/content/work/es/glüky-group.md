@@ -7,11 +7,11 @@ lang: 'es'
 translationKey: 'gluky-backend'
 ---
 
-Ingeniería backend para productos digitales en un entorno 100% remoto, enfocada en diseño de servicios escalables, APIs RESTful y performance de bases de datos.
+Desarrollo backend en un equipo distribuido, trabajando sobre productos digitales con alta concurrencia de usuarios. Mi foco principal fue desacoplar un monolito hacia una arquitectura orientada a servicios y establecer prácticas de observabilidad en producción.
 
 Impacto y resultados
 
-- Diseño y entrega de APIs REST con Node.js y límites de dominio claros, facilitando releases predecibles y mantenimiento a largo plazo.
-- Mejora de throughput y reducción de latencia p95 ~30% en endpoints clave mediante optimización de consultas, caching y ajustes de I/O asíncrono.
-- Reestructuración de flujos críticos en módulos/servicios más pequeños, disminuyendo acoplamiento y habilitando una arquitectura compatible con microservicios.
-- Aumento de confiabilidad con handlers idempotentes, integraciones seguras ante reintentos y observabilidad pragmática (logs + métricas + alertas).
+- Migración progresiva de módulos críticos del monolito a servicios independientes con Node.js, reduciendo el radio de fallo de deploys y habilitando releases por equipo.
+- Implementación de capa de caching distribuido (Redis) y optimización de queries N+1, logrando una reducción de latencia p95 del ~30% en los flujos de mayor tráfico.
+- Diseño e integración de pipeline de observabilidad (logs estructurados, métricas de negocio, alertas por SLO) que redujo el tiempo medio de detección de incidentes de horas a minutos.
+- Definición de guías de estilo para APIs internas y documentación de contratos con OpenAPI, mejorando la colaboración entre equipos frontend y backend.

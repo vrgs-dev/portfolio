@@ -7,11 +7,11 @@ lang: 'es'
 translationKey: 'digital-store-markets-fullstack'
 ---
 
-Construcción de bases backend para una plataforma de comercio, priorizando confiabilidad de APIs, consistencia de datos y rendimiento bajo carga concurrente.
+Desarrollo backend de una plataforma de e-commerce con Python y Flask. Responsable de la arquitectura de servicios para catálogo, precios dinámicos y procesamiento de órdenes en un entorno con picos de tráfico estacionales.
 
 Resultados clave
 
-- Diseño de APIs REST con Flask para catálogo, precios y órdenes, con contratos claros y manejo de errores consistente.
-- Optimización de consultas SQL e índices en endpoints críticos, reduciendo tiempos promedio de consulta ~35–45% en lecturas de alto tráfico.
-- Implementación de operaciones seguras ante concurrencia para inventario y transiciones de estado (idempotencia + validaciones optimistas) para evitar doble procesamiento.
-- Base de observabilidad (logs estructurados + métricas accionables) para acelerar diagnóstico de incidentes y tuning de performance.
+- Arquitectura del motor de órdenes con máquina de estados explícita, validaciones optimistas de stock y operaciones idempotentes que eliminaron el doble procesamiento en pagos.
+- Diseño de sistema de precios dinámicos con reglas configurables por categoría y promoción, soportando actualizaciones masivas sin downtime.
+- Optimización del rendimiento de catálogo bajo carga (índices compuestos, materialización de vistas, paginación por cursor) con mejoras del ~40% en tiempos de respuesta.
+- Implementación de test suite de integración con fixtures reproducibles, cubriendo flujos completos de compra y edge cases de concurrencia.

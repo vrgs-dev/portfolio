@@ -7,11 +7,11 @@ lang: 'es'
 translationKey: 'la-electronic-backend-freelance'
 ---
 
-Liderazgo en desarrollo backend para sistemas internos y plataformas comerciales, con foco en APIs escalables, optimización de base de datos y resiliencia del servicio.
+Regreso a LA Electronic como freelance senior para liderar la evolución de la plataforma backend. Rediseñé sistemas legados que yo mismo había construido años antes, aplicando lo aprendido en escalabilidad y resiliencia.
 
 Puntos destacados
 
-- Diseño de APIs REST con Node.js y separación clara de responsabilidades, permitiendo iterar features sin degradar estabilidad.
-- Optimización de consultas SQL y patrones de acceso a datos (índices + batching + paginación), mejorando tiempos de respuesta ~30–45% en endpoints de alto uso.
-- Implementación de autenticación y autorización robustas (roles, ciclo de vida de tokens), reduciendo regresiones de seguridad.
-- Mejora de manejo de concurrencia en operaciones críticas con claves de idempotencia, reintentos seguros y transiciones de estado controladas.
+- Refactorización del monolito original hacia módulos desacoplados con responsabilidades claras, reduciendo el tiempo de onboarding de nuevos desarrolladores y la superficie de regresiones.
+- Rediseño del flujo de autenticación hacia tokens de corta vida con refresh rotation, eliminando sesiones zombi y fortaleciendo la postura de seguridad sin afectar UX.
+- Implementación de procesamiento asíncrono con colas de mensajes para tareas pesadas (reportes, sincronización con ERP), liberando el event loop y mejorando la estabilidad bajo carga.
+- Mentoría técnica al equipo junior: revisiones de código, definición de estándares de testing y sesiones de arquitectura para decisiones de diseño.
