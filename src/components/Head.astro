@@ -223,3 +223,20 @@ const ldJson = {
   document.addEventListener('DOMContentLoaded', () => init());
   document.addEventListener('astro:after-swap', () => init());
 </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G09M4LZH2L"
+></script>
+<script>
+  // @ts-ignore - Google Tag Manager
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    // @ts-ignore - Google Tag Manager
+    dataLayer.push(arguments);
+  }
+  // @ts-ignore - Google Tag Manager
+  gtag('js', new Date());
+  // @ts-ignore - Google Tag Manager
+
+  gtag('config', 'G-G09M4LZH2L');
+</script>
